@@ -1,9 +1,9 @@
 import TiqueteraRepositoryMongo from "../repositories/TiqueteraRepositoryMongo.js";
-import CreateTiquetera from "../../application/use-cases/clientes/CreateTiquetera.js";
-import GetTiqueteras from "../../application/use-cases/clientes/GetTiqueteras.js";
-import GetTiqueteraById from "../../application/use-cases/clientes/GetTiqueteraById.js";
-import UpdateTiquetera from "../../application/use-cases/clientes/UpdateTiquetera.js";
-import DeleteTiquetera  from "../../application/use-cases/clientes/DeleteTiquetera.js";
+import CreateTiquetera from "../../application/use-cases/CreateTiquetera.js";
+import GetTiqueteras from "../../application/use-cases/GetTiqueteras.js";
+import GetTiqueteraById from "../../application/use-cases/GetTiqueteraById.js";
+import UpdateTiquetera from "../../application/use-cases/UpdateTiquetera.js";
+import DeleteTiquetera  from "../../application/use-cases/DeleteTiquetera.js";
 
 
 // POST /tiquetera
@@ -31,7 +31,7 @@ export const getTiqueteras = async (req, res) => {
 };
 
 // GET /tiqueteras/:id
-export const getClienteById = async (req, res) => {
+export const getTiqueteraById = async (req, res) => {
   try {
     const getTiqueteraById = new GetTiqueteraById(tiqueteraRepository);
     const tiquetera = await getTiqueteraById.execute(req.params.id);
@@ -55,7 +55,7 @@ export const updateTiquetera = async (req, res) => {
 };
 
 // DELETE /tiqueteras/:id
-export const deleteCliente = async (req, res) => {
+export const deleteTiquetera = async (req, res) => {
   try {
     const deleteTiquetera = new DeleteTiquetera(tiqueteraRepository);
     const result = await deleteTiquetera.execute(req.params.id);
